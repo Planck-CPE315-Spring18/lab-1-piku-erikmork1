@@ -10,6 +10,10 @@ main:
     @ Load the argument and perform the call. This is like 'printf("...")' in C.
     ldr     r0, =message
     bl      printf
+    ldr     r0, =line
+    bl      printf
+    ldr     r0, =finalLine
+    bl      printf
 
     @ Exit from 'main'. This is like 'return 0' in C.
     mov     r0, #0      @ Return 0.
@@ -21,4 +25,9 @@ main:
     @ Data for the printf call. The GNU assembler's ".asciz" directive
     @ automatically adds a NULL character termination.
 message:
-    .asciz  "Hello, world.\n"
+    .asciz  "Coding on machines\n"
+line:
+    .asciz  "Rasberry Pis are useful\n"
+finalLine:
+    .asciz  "I can code Haikus\n"
+
